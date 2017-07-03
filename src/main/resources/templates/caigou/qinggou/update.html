@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="../../css/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('.tab li').mouseover(function(){
+			var num = $(this).index()-1;
+			$(this).addClass('current').siblings().removeClass();
+			$('this:eq(num)').remove('span');
+		})
+	})
+	$(function(){
+		$('li').mouseover(function(){
+			$(this).addClass('current').siblings().removeClass('current');
+		})
+	})
+	function whichButton(event)
+  {
+	  var menu = document.getElementById('menu');
+    if (event.button==2){
+		menu.style.display = 'block';
+	}else{
+		menu.style.display = 'none';
+	}
+  }
+	$('#menu').mouseover(function(){
+		$('#menu li').addClass('current').siblings().removeClass();
+	})
+	function data(){
+	  window.open('seek.html','','height=370,width=840,top=160,left=180,toolbar=no,menubar=no,scrollbars=yes,resizable=no,localhost=no, status=no');
+	}
+	var $inp = $('<input type="text" style="width:100%; height:19px; background:url(../../images/search_1.png) no-repeat right center #FFF"/>');
+	function txt(){
+		$('#tdtxt').append($inp);
+		$('#tdtxt input').focus();
+	}
+</script>
+</head>
+<body>
+<table id="wrap">
+	<tr>
+    	<td id="rig_top" >
+            <div   style="overflow:auto; height:190px;">
+            <table class="content">
+                <tr>
+                    <td class="one" style="color:#00F">公 司</td>
+                    <td class="inp">
+                    <div class="inp_search">
+                    	<input type="text"/>
+                        <span class="searRR"></span>
+                    </div>
+                    </td>
+                    <td class="one" style="width:66px;">对方订单号</td>
+                    <td class="inp">
+                    <div class="inp_search"  style="width:244px;">
+                    <input type="text"/>
+                    
+                    </div>
+                    </td>
+                    <td class="one">订单编号</td>
+                    <td class="inp">
+                    <input type="text" class="current"/>
+                    </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color:#00F">版本号</td>
+                    <td class="inp">
+                    <div class="inp_search">
+                    	<input type="text" value="1.00" style="text-align:right;width:224px;"/>
+                    </div>
+                    </td>
+                    <td colspan="2"><input type="checkbox" /> 是否补货</td>
+                    <td colspan="2"><input type="checkbox" /> 是否退货</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="checkbox" class="pane"/> 是否已协同生成销售订单</td>
+                    <td colspan="2"><input type="checkbox" class="pane"/> 是否由销售订单协同生成</td>
+                    <td style="color:#00F">订单日期</td>
+                    <td class="inp"><input type="text" class="current" value="2011-02-16" style="text-align:right"/></td>
+                </tr>
+                <tr>
+                    <td style="color:#00F">业务流程</td>
+                    <td class="inp">
+                    <div class="inp_search_2">
+                    <input type="text" value="普通采购" style="text-align:left;background:#FFF;"/>
+                     <span class="searR_2"></span>
+                    </div>
+                    </td>
+                    <td style="color:#00F">采购组织</td>
+                    <td class="inp">
+                    <div class="inp_search_2"  style="width:244px;">
+                    <input type="text" style="text-align:left;background:#FFF; width:218px;"/>
+                     <span class="searR_2"></span>
+                    </div>
+                    </td>
+                    <td style="color:#00F">供应商</td>
+                    <td class="inp">
+                    <div class="inp_search_2"  style="width:244px;">
+                    <input type="text" style="text-align:left;background:#FFF; width:218px;"/>
+                    <span class="searR_2"></span>
+                    </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="one">散 户</td>
+                    <td class="inp">
+                    <div class="inp_search" >
+                    	<input type="text"/>
+                        <span class="searRR"></span>
+                    </div>
+                    </td>
+                    <td class="one">开户银行</td>
+                    <td class="inp">
+                    <div class="inp_search" style="width:244px;">
+                    	<input type="text" style=" width:218px;"/>
+                        <span class="searRR"></span>
+                    </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color:#00F">供应商发货地址</td>
+                    <td class="inp" colspan="3">
+                    <div class="inp_search_2" style="width:600px;">
+                    <input type="text" style="text-align:left;background:#FFF; width:575px;"/>
+                    <span class="searR_2"></span>
+                    </div>
+                    </td>
+                    <td class="one">采购员</td>
+                    <td class="inp"><input type="text" class="current"/></td>
+                </tr><tr>
+                    <td style="color:#00F">采购部门</td>
+                    <td class="inp"><div class="inp_search_2"  style="width:234px;">
+                    <input type="text" style="text-align:left;background:#FEFEDD;"/>
+                     <span class="searR_2"></span>
+                    </div></td>
+                    <td>收货方</td>
+                    <td class="inp">
+                    <div class="inp_search_2"  style="width:244px;">
+                    <input type="text" style="text-align:left;background:#FFF; width:220px;"/>
+                     <span class="searR_2"></span>
+                    </div>
+                    </td>
+                     <td>发票方</td>
+                    <td class="inp">
+                    <div class="inp_search_2"  style="width:244px;">
+                    <input type="text" style="text-align:left;background:#FFF; width:218px;"/>
+                     <span class="searR_2"></span>
+                    </div>
+                    </td>
+                </tr>
+            </table>
+           </div>
+		</td>
+    </tr>
+    <tr>
+    	<td id="right_center">
+            <div  style="overflow:auto; height:200px; width:1150px;">
+            <table cellspacing="0" cellpadding="0" width="2000" class="table_2">
+                <tr class="one">
+                    <td style="width:30px;">&nbsp;</td>
+                    <td style="color:#00F">行号</td>
+                    <td style="color:#00F">存货编码</td>
+                    <td>存货名称</td>
+                    <td>规格</td>
+                    <td>型号</td>
+                    <td>自由项</td>
+                    <td>计量单位</td>
+                    <td style="color:#00F">数量</td>
+                    <td style="color:#00F">含税单价</td>
+                    <td style="color:#00F">单价</td>
+                </tr>
+                <tr style="background:#FDF2C5;">
+                    <td style="width:30px; text-align:center; background:#E2E2E2;">1</td>
+                    <td onmousedown="whichButton(event)">&nbsp;10
+                    <ul id="menu">
+                      <li>增行</li>
+                      <li>删行</a></li>
+                      <li>插入行</li>
+                      <li>复制行</li>
+                      <li>粘贴行</li>
+                      <li>粘贴行到表尾</li>
+                      <li>重排行号</li>
+                      <li>卡片编辑</li>
+                    </ul>
+                    </td>
+                    <td style="background:#FFF;">
+                    <div class="current">
+                    <input type="text" class="search" style="width:92%;"/>
+                    <span class="td_search"></span>
+                    </div>
+                    </td>
+                    <td  id="tdtxt" onclick="txt()"></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="width:30px; text-align:center; background:#E2E2E2;">2</td>
+                    <td>&nbsp;20</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td><select style="width:100%">
+                        	<option>台</option>
+                            <option>张</option>
+                            <option>分米</option>
+                            <option>厘米</option>
+                        </select></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="width:30px; text-align:center; background:#E2E2E2;">3</td>
+                    <td>&nbsp;30</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="width:30px; text-align:center; background:#E2E2E2;">4</td>
+                    <td>&nbsp;40</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="width:30px; text-align:center; background:#E2E2E2;">5</td>
+                    <td>&nbsp;50</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="width:30px; text-align:center; background:#E2E2E2;">6</td>
+                    <td>&nbsp;60</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="11">&nbsp;</td>
+                </tr>
+            </table>
+           </div>
+    	</td>
+    </tr>
+    <tr>
+    	<td id="right-bot">
+            <table>
+                <tr>
+                    <td class="bot_1" style="color:#00F">制单人</td>
+                    <td class="inp_1"><input type="text"/></td>
+                    <td class="bot_1" style="color:#00F">修订人</td>
+                    <td class="inp_1"><input type="text"/></td>
+                    <td class="bot_1">审批人</td>
+                    <td class="inp_1"><input type="text"/></td>
+                    <td  width="77px">审批日期</td>
+                    <td class="inp_1"><input type="text" style="background:url(../../images/date.png) no-repeat 169px center;"/></td>
+                </tr>
+                <tr>
+                    <td>制单时间</td>
+                    <td class="inp_2"><input type="text"/></td>
+                    <td>修订时间</td>
+                    <td class="inp_2"><input type="text"/></td>
+                    <td>审批时间</td>
+                    <td class="inp_2"><input type="text"/></td>
+                    <td>最后修改时间</td>
+                    <td class="inp_2"><input type="text"/></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+     <tr class="save">
+       <td height="30" align="right" style="padding-right"><input type="button" value="保存" class="search"/></td>
+     </tr>
+</table>
+</body>
+</html>

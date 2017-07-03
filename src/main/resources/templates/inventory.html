@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>存货档案</title>
+<link href="css/style-inven.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('ul li').mouseover(function(){
+			$(this).addClass('current').siblings().removeClass();
+		})
+		$('.inptxt').click(function(){
+			$('.inptxt').val('');
+		})
+	})
+</script>
+</head>
+<body>
+<table cellpadding="0" cellspacing="0" id="wrap">
+	<tr height="22">
+    	<td height="22">
+        	<ul>
+            	<li>我的常用</li>
+               <li  class="current">全部数据</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+    	<td width="240" height="444" style="border:1px solid #A0B3C6; border-right:1px solid #7A8A99; background:#FFF">&nbsp;</td>
+        <td width="725" height="444" style="border:1px solid #A0B3C6; border-left:0">
+        	<table style="padding:3px;" cellpadding="0" cellspacing="0">
+            	<tr>
+                	<td height="30px" style="padding:0 5px;">
+                    	<span><a href="#" class="addin">加入常用</a><a href="#" class="clear">刷新</a><a href="#" class="tab">栏目</a><a href="#" class="adv">高级查询</a><a href="#" class="maintain">维护</a></span>
+                    	<div><input type="text" class="inptxt" value="搜索"/><input type="button" class="inpbtn" value="搜索全部"/></div>
+                    </td>
+                </tr>
+                <tr>
+                	<td width="730" height="216" class="center">
+                    	<div style="overflow:auto; width:730px; height:216px; border:1px solid #898989;">
+                            <table width="1120px;" cellpadding="0" cellspacing="0" style="background:#FFFFFF;">
+                                <tr class="one">
+                                    <td style="width:40px; border-right:0;">&nbsp;</td>
+                                    <td width="100">单据号</td>
+                                    <td width="90">业务流程</td>
+                                    <td width="90">日期</td>
+                                    <td width="180">客户</td>
+                                    <td width="90">散户</td>
+                                    <td width="90">部门</td>
+                                    <td width="90">业务员</td>
+                                    <td width="90">销售组织</td>
+                                    <td width="90">库存组织</td>
+                                    <td width="180">收货单据</td>	
+                				</tr>
+                                <tr>
+                                   <td align="center" style="background:#E2E2E2">1</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                   <td align="center" style="background:#E2E2E2">2</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                   <td align="center" style="background:#E2E2E2">3</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                   <td align="center" style="background:#E2E2E2">4</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                   <td align="center" style="background:#E2E2E2">5</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                   <td align="center" style="background:#E2E2E2">6</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                   <td align="center" style="background:#E2E2E2">7</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                   <td align="center" style="background:#E2E2E2">8</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                   <td align="center" style="background:#E2E2E2">9</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                	<td class="btns">
+                    	<input type="button" value="∧" class="up"/><input type="button" value="∨" class="down"/>
+                    <span><a href="#" class="left">上一页</a><a href="#" class="right">下一页</a></span>	
+                    </td>
+                </tr>
+                <tr>
+                	<td width="730" height="148"  class="center">
+                    	<div style="overflow:auto; width:730px; height:148px; border:1px solid #898989;">
+                            <table width="1120px;" cellpadding="0" cellspacing="0" style="background:#FFFFFF;">
+                                <tr class="one">
+                                    <td style="width:40px; border-right:0;">&nbsp;</td>
+                                    <td width="100">单据号</td>
+                                    <td width="90">业务流程</td>
+                                    <td width="90">日期</td>
+                                    <td width="180">客户</td>
+                                    <td width="90">散户</td>
+                                    <td width="90">部门</td>
+                                    <td width="90">业务员</td>
+                                    <td width="90">销售组织</td>
+                                    <td width="90">库存组织</td>
+                                    <td width="180">收货单据</td>	
+                				</tr>
+                                <tr>
+                                   <td align="center" style="background:#E2E2E2">1</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                   <td align="center" style="background:#E2E2E2">2</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                   <td align="center" style="background:#E2E2E2">3</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                   <td align="center" style="background:#E2E2E2">4</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                   <td align="center" style="background:#E2E2E2">5</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                   <td align="center" style="background:#E2E2E2">6</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                   <td>&nbsp;</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr height="36" style="line-height:36px;">
+    	<td colspan="2" style="padding-left:5px;">使用“搜索全部”查找包含“abc”的档案，请输入“%abc”
+        	<span class="finish"><input type="button" value="确定"/><input type="button" value="取消"/></span>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

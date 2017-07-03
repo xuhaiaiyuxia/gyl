@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>单据模板类型</title>
+<style type="text/css">
+	body{margin:0; padding:0; font-size:12px; background:#ECF4FB;}
+	table,tr,td,input{margin:0; padding:0; list-style:none; border:0;}
+	#seek{width:810px; height:340px; background:#ECF4FB; padding:5px; margin:0 auto;}
+	.top{height:23px; padding:7px 5px 0;}
+	.top input{width:78px; height:18px; border:1px solid #CCC; float:left;}
+	.top span{float:right;}
+	.top span a{color:#000; margin-left:8px; display:inline-block; height:15px; line-height:15px;}
+	.top span a:link,.top span a:visited{color:#000; text-decoration:none;}
+	.top span a:hover{text-decoration:none;}
+	.top span .clear{background:url(images/clear.png) no-repeat left 0; padding-left:15px;}
+	.top span .programa{background:url(images/programa.png) no-repeat left center; padding-left:18px;}
+	table{}
+	table tr{border:1px solid #9EB6CE; height:19px;}
+	.num_1{width:35px;}
+	.num_2,.num_3{width:373px;}
+	.num_1_1{text-align:center; background:#F4FEFF; border-bottom:1px solid #D0D7E5; border-right:1px solid #D0D7E5;}
+	.num_2_1,.num_3_1{background:#FFF; border-right:1px solid #D0D7E5; border-bottom:1px solid #D0D7E5; padding-left:5px; cursor:pointer;}
+	.btns{float:right; margin:15px 15px 0 0;}
+	.btn{width:68px; height:20px; border:1px solid #526173; border-radius:2px; text-align:center; line-height:20px; background:url(images/btn_bg.png) repeat-x; margin-left:5px; cursor:pointer;}
+</style>
+<script type="text/javascript" src="js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var td_1 = document.getElementsByClassName('num_2_1');
+		var td_2 = document.getElementsByClassName('num_3_1');
+		$(td_1).mouseover(function(){
+			$(this).css('background','#F1F1F1');
+		})
+	})
+</script>
+</head>
+<body>
+<div id="seek">
+    <div  style="overflow:scroll; overflow-x:hidden; height:275px;border:1px solid #898989;width:800px">
+    <table cellpadding="0" cellspacing="0">
+    	<tr style="text-align:center; background:url(images/seek_tab_bg.png) repeat-x;">
+        	<td class="num_1" style="border:1px solid #9EB6CE; border-left:0"></td>
+            <td class="num_2" style="border:1px solid #9EB6CE; border-left:0">公司编码</td>
+            <td class="num_3" style="border:1px solid #9EB6CE; border-left:0">公司名称</td>
+        </tr>
+        <tr>
+        	<td class="num_1_1">1</td>
+            <td class="num_2_1">100402</td>
+            <td class="num_3_1">币种</td>
+        </tr>
+        <tr>
+        	<td class="num_1_1">2</td>
+            <td class="num_2_1">100403</td>
+            <td class="num_3_1">会计期间方案</td>
+        </tr>
+        <tr>
+        	<td class="num_1_1">3</td>
+            <td class="num_2_1">100404</td>
+            <td class="num_3_1">会计期间</td>
+        </tr>
+        <tr>
+        	<td class="num_1_1">4</td>
+            <td class="num_2_1">100405</td>
+            <td class="num_3_1">会计期间调整期</td>
+        </tr>
+        <tr>
+        	<td class="num_1_1">5</td>
+            <td class="num_2_1">10040401</td>
+            <td class="num_3_1">仓库与成本域关系定义</td>
+        </tr>
+        <tr>
+        	<td class="num_1_1">6</td>
+            <td class="num_2_1">10040402</td>
+            <td class="num_3_1">公司目录</td>
+        </tr>
+        <tr>
+        	<td class="num_1_1">7</td>
+            <td class="num_2_1">10040403</td>
+            <td class="num_3_1">自定义项定义</td>
+        </tr>
+        <tr>
+        	<td class="num_1_1">8</td>
+            <td class="num_2_1">10080206</td>
+            <td class="num_3_1">自定义项引用</td>
+        </tr>
+        <tr>
+        	<td class="num_1_1">9</td>
+            <td class="num_2_1">10080207</td>
+            <td class="num_3_1">自定义项档案定义</td>
+        </tr>
+        <tr>
+        	<td class="num_1_1">10</td>
+            <td class="num_2_1">10080208</td>
+            <td class="num_3_1">库存组织</td>
+        </tr>
+        <tr>
+        	<td class="num_1_1">11</td>
+            <td class="num_2_1">10080406</td>
+            <td class="num_3_1">部门档案</td>
+        </tr>
+        <tr>
+        	<td class="num_1_1">12</td>
+            <td class="num_2_1">10080407</td>
+            <td class="num_3_1">采购组织</td>
+        </tr>
+        <tr>
+        	<td class="num_1_1">13</td>
+            <td class="num_2_1">10080408</td>
+            <td class="num_3_1">销售组织</td>
+        </tr>
+        <tr>
+        	<td class="num_1_1">14</td>
+            <td class="num_2_1">10080417</td>
+            <td class="num_3_1">会计主体</td>
+        </tr>
+        <tr>
+        	<td class="num_1_1">15</td>
+            <td class="num_2_1">10080417</td>
+            <td class="num_3_1">会计主体</td>
+        </tr>
+        <tr>
+        	<td class="num_1_1">16</td>
+            <td class="num_2_1">10080417</td>
+            <td class="num_3_1">会计主体</td>
+        </tr>
+    </table>
+    </div>
+    <div class="btns"><input type="button" value="确定" class="btn"/><input type="button" value="取消" class="btn"/></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="/css/style.css" rel="stylesheet" type="text/css"/>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="/js/jquery-1.4.2.js"></script>
+<script>
+$.ajax({
+	url:"/deptController/list",
+	type:"POST",
+	success:function(data){
+		app.deptList = data.content;
+		app.page=data;
+	}
+});
+</script>
+</head>
+<body>
+<div id="app">
+<table id="userwrap">
+	<tr class="user">
+        <td class="right">
+        	<table cellspacing="0" cellpadding="0" id="maintain-top" align="center"  width="900" style=" overflow:auto; height:40px;">
+                <tr class="one" height="20">
+                    <td width="300">部门名称</td>
+                    <td width="300">描述</td>
+					<td width="300">修改</td>
+                </tr>
+                <tr v-for="dept in deptList">
+                	<td v-show="false">{{dept.did}}</td>
+                   <td>{{dept.name}}</td>
+                   <td>{{dept.description}}</td>
+				   <td class="btn" align="center">
+				   <input @click="toUpdateUI(dept.did)" type="button" value="修改"/></td>
+                </tr>
+               
+                <tr style="background:#ECF4FB;"  height="30">
+                <td colspan="1" style="border-right:0;border-top:1px solid #8FAFD7;">&nbsp;&nbsp;共有 {{page.totalElements}} 条记录，当前第 {{page.number+1}}/{{page.totalPages}} 页</td>
+                 <td colspan="2" style="border-right:0; padding-right:80px;border-top:1px solid #8FAFD7;" align="right" class="page">
+                 <input  v-show="!page.first" type="button"  @click="firstPage" value="首页"/>&nbsp;
+                 <input v-show="!page.first" type="button" @click="prePage"  value="上一页" />&nbsp;
+                 <input v-show="!page.last" type="button" @click="nextPage" value="下一页" />&nbsp;
+                 <input v-show="!page.last" type="button" @click="lastPage" value="尾页"/>&nbsp;
+                 <span>转到第 <input name="textfield" v-model="spPage" type="text" size="4" style="height:16px; width:28px; border:1px solid #999999; background:#FFF; border-radius:0;" /> 页 </span>&nbsp;&nbsp;
+                 <input type="button" @click="toSpPage" value="转" style=" padding:0 10px;"/>
+                </td>
+                	</tr>
+                    </table>
+        </td>
+    </tr>
+</table>
+</div>
+<script>
+	 var app = new Vue({
+		  el: '#app',
+		  data: {
+		   	deptList:[],
+		   	page:{},
+		   	spPage:"",
+		   	pageSize:10
+		  },
+		  methods:{
+			  toUpdateUI:function(id){
+				 // alert(id)
+				  window.location.href = "/deptController/update/"+id;
+			  },
+			  //下一頁
+			  nextPage:function(){
+				 if(!this.page.last){
+					 getDeptData(app.page.number+2,this.pageSize);
+				 }
+			  } ,
+		  //上一頁
+		 	 prePage:function(){
+		 		if(!this.page.first){
+					 getDeptData(app.page.number,this.pageSize);
+				 }
+		 	 },
+		 	firstPage:function(){
+		 		 getDeptData(0,this.pageSize);
+		 	},
+		 	lastPage:function(){
+		 		getDeptData(app.page.totalPages,this.pageSize);
+		 	},
+		 	toSpPage:function(){
+		 		if(!this.spPage){
+		 			getDeptData(0,this.pageSize);
+		 			return;
+		 		}
+		 		if(this.spPage>app.page.totalPages){
+		 			getDeptData(app.page.totalPages,this.pageSize);
+		 			this.spPage=app.page.totalPages;
+		 			return;
+		 		}
+		 		getDeptData(this.spPage,this.pageSize);
+		 	}
+		  }
+		}) 
+	/* $(function(){
+		
+	}); */
+	 
+	 function getDeptData(page,size){
+		 $.ajax({
+				url:"/deptController/list",
+				data:{
+					page:page,
+					size:size
+				},
+				type:"POST",
+				success:function(data){
+					app.deptList = data.content;
+					app.page=data;
+				}
+			});
+	 }
+</script>
+</body>
+</html>

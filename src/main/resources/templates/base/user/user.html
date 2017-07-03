@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="/css/style.css" rel="stylesheet" type="text/css"/>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="/js/jquery-1.4.2.js"></script>
+</head>
+<body>
+<div id="app">
+<table id="userwrap">
+	<tr class="user">
+		
+        <td class="right">
+        	<table cellspacing="0" cellpadding="0" id="maintain-top" align="center"  width="900" style=" overflow:auto; height:40px;">
+               <tr class="one" height="20">
+                	<td class="btn" align="left">
+                	<input type="button" @click="deleteBatch" value="删除"/></td>
+                </tr>
+                <tr class="one" height="20">
+                	<td><input @click="qx" v-model="qxval" type="checkbox"/></td>
+                    <td width="300">姓名</td>
+                    <td width="300">性别</td>
+					<td width="300">电话</td>
+					<td width="300">email</td>
+					<td width="300">操作</td>
+                </tr>
+	                <tr v-for="user in page.content" class="two" align="center">
+	                	<td><input type="checkbox" name="uids" v-model="checked" :value="user.uid"/></td>
+	                    <td width="300">{{user.username}}</td>
+	                    <td width="300">{{user.sex|jugeSex}}</td>
+						<td width="300">{{user.phone}}</td>
+						<td width="300">{{user.email}}</td>
+						<td width="300" class="btn">
+						<input @click="toUpdateUI(user.uid)" type="button" value="修改"/></td>
+	                </tr>
+             </table>
+        </td>
+    </tr>
+</table>
+<p style="width:900px; height:20px;font-size:12px;">
+	<span class="page" style="float:right">
+		<input v-if="!page.first" type="button"  @click="first" value="首页"/>&nbsp;
+		<input v-if="!page.first" type="button"  @click="pre" value="上一页" />&nbsp;
+		<input v-if="!page.last" type="button" @click="next"  value="下一页"/>&nbsp;
+		<input v-if="!page.last" type="button"  @click="last"  value="尾页"/>&nbsp;
+		<span>转到第
+		<input type="text" v-model="spPage"  size="4" style="height:16px; width:28px; border:1px solid #999999; background:#FFF; border-radius:0;" />页 </span>&nbsp;&nbsp;
+		<input type="button" @click="tospPage" value="转" style=" padding:0 10px;"/>
+	</span>&nbsp;&nbsp;共有{{page.totalElements}}条记录，当前第 {{page.number+1}}/{{page.totalPages}}页</p>
+<div>
+          <a href="/userController/addUI"><img src="/images/createNew.png" /></a>
+</div>
+</div>
+<script>
+var app = new Vue({
+	el:"#app",
+	data:{
+		page:{},
+		checked:[],
+		qxval:false,
+		spPage:""
+	},
+	methods:{
+		toUpdateUI:function(id){
+			window.location.href = "/userController/toUpdateUI/"+id;
+		},
+		next:function(){
+			toPage(this.page.number+2);
+			this.checked=[];
+		},
+		pre:function(){
+			toPage(this.page.number);
+			this.checked=[];
+		},
+		first:function(){
+			toPage(1);
+			this.checked=[];
+		},
+		last:function(){
+			toPage(this.page.totalPages);
+			this.checked=[];
+		},
+		qx:function(){
+			if(this.qxval){
+				var userList = this.page.content;
+				var arr=[];
+				for(var i=0;i<userList.length;i++){
+					arr.push(userList[i].uid);
+				}
+				this.checked=arr;
+			}else{
+				if( this.page.numberOfElements==this.checked.length){
+					this.checked=[];
+				}
+			}
+		},
+		tospPage:function(){
+			console.log(this.spPage);
+			if(!this.spPage){
+				toPage(1);
+			}else if(this.spPage>this.page.totalPages){
+				toPage(this.page.totalPages);
+				this.spPage = this.page.totalPages;
+			}else{
+				toPage(this.spPage);
+			}
+			this.checked=[];
+		},
+		deleteBatch:function(){
+			if(this.checked.length==0){
+				return;
+			}
+			$.ajax({
+				url:"/userController/deleteBatch",
+				type:"post",
+				data:{
+					page:this.page.number+1,
+					ids:this.checked.join(",")
+				},
+				success:function(data){
+					app.page = data;
+					this.checked=[];
+					app.qxval=false;
+				}
+			});
+		}
+	},
+	filters:{
+		jugeSex:function(val){
+			return val=="1"?"男":"女";
+		}
+	},
+	watch:{
+		checked:function(val){
+			if( this.page.numberOfElements!=this.checked.length){
+				this.qxval=false;
+			}else{
+				this.qxval=true;
+			}
+		}
+	}
+});
+
+$(function(){
+	$.ajax({
+		url:"/userController/list/1",
+		success:function(data){
+			app.page = data;
+		}
+	});
+});
+
+function toPage(page){
+	$.ajax({
+		url:"/userController/list/"+page,
+		success:function(data){
+			app.page = data;
+		}
+	});
+}
+</script>
+</body>
+</html>

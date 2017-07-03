@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="/css/style.css" rel="stylesheet" type="text/css"/>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="/js/jquery-1.4.2.js"></script>
+</head>
+<body>
+<div id="app">
+<table id="userwrap">
+	<tr class="user">
+        <td class="right">
+        	<table>
+            	<tr>
+                	<td class="one">名称：</td>
+                    <td class="two"><input type="text" v-model="dept.name" class="inptxt"/></td>
+                    
+                </tr>
+                <tr>
+                	<td>描述：</td>
+                    <td><input type="text" v-model="dept.description" class="inptxt"/></td>
+                </tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr>
+                	<td colspan="3"></td>
+                    <td class="btn">
+                    <input @click="tijiao" type="button" value="提交"/>
+                    <input @click="reset" type="button" value="重置"/></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</div>
+<script>
+
+var app = new Vue({
+	  el: '#app',
+	  data: {
+		  id:${id},
+		  dept:{}
+	  },
+	  methods:{
+		  reset:function(){
+			  this.dept = {}
+		  },
+		  tijiao:function(){
+			  this.dept.did = app.id;
+			  $.ajax({
+				  url:"/deptController/updatedept",
+				  type:"post",
+				  data:app.dept,
+					success:function(data){
+						if(data.status=="success"){
+							window.location.href = "/deptController/department";
+						}
+					}
+			  });
+		  }
+	  }
+	}) 
+	$(function(){
+		$.ajax({
+			url:"/deptController/updateinfo/"+app.id,
+			success:function(data){
+				app.dept = data
+			}
+		});
+	});
+</script>
+</body>
+</html>
